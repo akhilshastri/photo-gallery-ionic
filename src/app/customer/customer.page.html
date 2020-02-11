@@ -1,0 +1,57 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Create Account</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <form (ngSubmit)="onSubmit()" #accountForm="ngForm">
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-item>
+        <ion-label position="stacked">First Name <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input name="fname" required type="text" [(ngModel)]="customer.name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Last Name <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input name="lname" required type="text" [(ngModel)]="customer.lastName"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Title</ion-label>
+        <ion-input name="title" [(ngModel)]="customer.title"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Address</ion-label>
+        <ion-input name="add1"  placeholder="Address Line 1" [(ngModel)]="customer.add1"></ion-input>
+        <ion-input name="add2"  placeholder="Address Line 2" [(ngModel)]="customer.add2"></ion-input>
+        <ion-input  name="city"  placeholder="City" [(ngModel)]="customer.city"></ion-input>
+        <ion-input  name="state"  placeholder="State" [(ngModel)]="customer.state"></ion-input>
+        <ion-input  name="zip"  placeholder="Zip Code" [(ngModel)]="customer.zip"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Notes</ion-label>
+        <ion-textarea></ion-textarea>
+      </ion-item>
+    </ion-list>
+
+    <ion-item>
+      <ion-label position="floating">Select Date</ion-label>
+      <ion-datetime
+              name="accountDate"
+              displayFormat="DD/MMM/YYYY"
+
+              [(ngModel)]="customer.accountDate"
+              >
+      </ion-datetime>
+    </ion-item>
+
+
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit" class="ion-no-margin">Create account</ion-button>
+    </div>
+  </form>
+
+</ion-content>
